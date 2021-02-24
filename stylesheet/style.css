@@ -132,7 +132,7 @@ q {
 /* Screens that are 576px and smaller will adjust the video display  */
 @media screen and (max-width: 576px) {
     #Coding_video {
-        left: -215vw;
+        left: -231vw;
         top: -22.5vw;
     }
 }
