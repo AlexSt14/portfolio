@@ -50,6 +50,26 @@ q {
     color: rgb(43, 43, 43);
 }
 
+/* Targets the first paragraph before the github image on the homepage */
+.firstp {
+    opacity: 1;
+}
+/*Targets the second paragraph before the github image on the homepage */
+.ontop {
+    position: absolute;
+    top: 2120px;
+    opacity: 0;
+}
+
+/* Targets the two paragraphs before the GitHub Image on the homepage */
+@media screen and (max-width: 500px) {
+    .firstp {
+        opacity: 0;
+    }
+    .ontop {
+        opacity: 1;
+    }
+}
 /* Image elements */
 .imgcenter {
     filter: grayscale(70%);  /* This rids our picture of 60% of theyr color */
@@ -68,6 +88,14 @@ q {
     margin-right: auto;  /* This sets the right margin auto */
     display: block;  /* This sets the display to block, allowing us to center the image */
     position: relative;  /* This sets the image relative to its position, allowing us to use the animation below */
+}
+
+/* Targets the GitHub image when screen is 576px or less */
+@media screen and (max-width: 576px) {
+    #center  {
+        width: 230px;
+        height: 230px;
+    }
 }
 /* This targets all the images with scale class in the about page */
 .scale {
@@ -133,7 +161,7 @@ q {
 @media screen and (max-width: 576px) {
     #Coding_video {
         left: -231vw;
-        top: -22.5vw;
+        top: -25.5vw;
     }
 }
 
@@ -179,6 +207,7 @@ q {
     font-family: 'Helvetica', sans-serif;  /* This specifies the font family for the text on our navbar */
     font-size: 20px; /* This specifies the font size for text on our navbar */
     text-align: center;  /* This centers the text within its container on the navbar */
+    border-top-
 }
 
 /* Screens 576px and smaller will display navbar links equally distributed */
@@ -354,6 +383,13 @@ h1::after {
     font-family: "Courier New", sans-serif;
     color: rgb(141, 141, 141);
     font-size: small;
+}
+
+/* Targets the footer buttons when screen size is 576px or less */
+@media screen and (max-width: 576px) {
+    #footer li {
+        margin-left: 110px;
+    }
 }
 /**** END Before footer and Footer Styling ****/
 
