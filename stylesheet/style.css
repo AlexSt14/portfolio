@@ -79,7 +79,7 @@ q {
     filter: grayscale(5%);  /* This gives back some color to the image when hovered over */
     -webkit-animation: moveUp 1000s; /* Animation for Safari 4.0-8.0 */
     animation: moveUp 1000s; /* Animation for all other browsers */
-    box-shadow: 6px 6px 6px rgba(0,0,0,0.5);
+    box-shadow: 6px 16px 10px rgba(0,0,0,0.5);
     position: relative;
 }
 
