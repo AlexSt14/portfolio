@@ -303,8 +303,7 @@ h1::after {
         color: #5c5c5c;
     }
     #beforefooter {
-        width: 80%;
-        margin-left: 9vw;
+        width: 100%;
     }
     #beforefooter li {
         margin-top: -30px;
