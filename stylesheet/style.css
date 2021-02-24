@@ -15,39 +15,19 @@ h1 {
 
 /* Paragraph elements */
 .heading {
-    font-family: 'Lucida Console', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     font-size: 1.45em;
-    letter-spacing: .5px;
 }
 
 p {
-    font-family: 'Lucida Console', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     font-size: 1.25em;
-    letter-spacing: .5px;
+    color: rgb(105, 105, 105);
 }
 
-.animation {
-    font-family: Perpetua, Rockwell Extra Bold;
-    text-align: justify;  /*  Justify text within paragraph elements  */
-    letter-spacing: 1px;  /*  This expands the text slightly  */
-    font-size: 1.35em;
-    padding-left: 20px;  /* Adds padding to the left of the paragraph element */
-    padding-right: 20px; /* Adds padding to the right of the paragraph element */
-    position: relative;  /* Sets the text relative to its normal positioning, allowing us to use the animation below  */
-    text-shadow: 2px 1px 5px rgba(0,0,0,0.5);  /* Adds a shadow to the text */
-}
-
-/* Paragraph element hover effect */
-.animation:hover {
-    position: relative;  /*  This sets the text relative to its normal positioning, allowing us to use the animation below  */
-    -webkit-animation: moveP 100s;  /*  Animation for Safari 4.0 - 8.0  */
-    animation: moveP 1000s;  /*  Applies the moveP animations for 1000s  */
-    text-shadow: 4px 7px 6px rgba(0,0,0,0.6);  /* Adds a shadow to the text when hovered over  */
-}
-
-@keyframes moveP {
-    from {top: -0.3vw;}  /*  Defines the starting position of the animation  */
-    to {top: -0.3vw;}  /*  Defines the ending position of the animation  */
+.quote {
+    font-family: 'Helvetica', sans-serif;
+    color: rgb(238, 238, 238);
 }
 
 /*  Center class - this applies to all elements with the class "center"  */
@@ -55,20 +35,19 @@ p {
     text-align: center;  /*  This center aligns the text  */
 }
 
-/*  Center class hover effect - This only affects the quote, github link, and footer  */
-.GithublinkFooter:hover {
-    transition: transform 2s;  /*  This makes the transform effect last 2 seconds  */
-    transform: scale(1.05);  /*  This makes the elements with class "center" increase in size by 1.05 when hovered over */
-}
-
 /*  Anchor elements  */
 a {
-    color: rgb(0, 4, 226);  /*  This ensures all links are blue  */
+    color: blue;
 }
 
 /* Quotation elements */
 q {
     font-style: italic;  /* This makes the quote italicized */
+}
+
+/* This targets the heading paragraph from about page */
+.heading {
+    color: rgb(43, 43, 43);
 }
 
 /* Image elements */
@@ -78,33 +57,39 @@ q {
     margin-left: auto;  /* This sets the left margin auto */
     margin-right: auto;  /* This sets the right margin auto */
     display: block;  /* This sets the display to block, allowing us to center the image */
-    box-shadow: 6px 6px 6px rgba(0,0,0,0.4);  /* This gives a shadow to images */
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.4);  /* This gives a shadow to images */
 }
 
+/* This targets the github image in the homepage */
 #center {
     filter: grayscale(70%);
-    border-radius: 8px;
-}
-
-.scale {
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
-}
-
-/* This targets just the github image as the image already had a box-shadow */
-#center {
+    border-radius: 4px;
     margin-left: auto;  /* This sets the left margin auto */
     margin-right: auto;  /* This sets the right margin auto */
     display: block;  /* This sets the display to block, allowing us to center the image */
     position: relative;  /* This sets the image relative to its position, allowing us to use the animation below */
 }
+/* This targets all the images with scale class in the about page */
+.scale {
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
 
 /* Image element hover effects */
 .imgcenter:hover {
     filter: grayscale(5%);  /* This gives back some color to the image when hovered over */
-    transition: transform 1s;  /* Transition lasts 1 second */
-    transform: scale(1.1);  /* Image is increased slightly when hovered over */
+    -webkit-animation: moveUp 1000s; /* Animation for Safari 4.0-8.0 */
+    animation: moveUp 1000s; /* Animation for all other browsers */
+    box-shadow: 6px 6px 6px rgba(0,0,0,0.5);
+    position: relative;
 }
 
+/* This animation is for images on homepage excluding the github image */
+@keyframes moveUp {
+    from {top: -0.6vw;}
+    to {top: -0.6vw;}
+}
+
+/* This targets all the images with scale class in the about page */
 .scale:hover {
     transition: transform 1s;
     transform: scale(1.3);
@@ -144,10 +129,11 @@ q {
     z-index: -1;  /*  This places the video behind the other elements on the page  */
 }
 
-/* Screens that are 576px and smaller will not dsiplay the background video  */
+/* Screens that are 576px and smaller will adjust the video display  */
 @media screen and (max-width: 576px) {
     #Coding_video {
-        display: none;
+        left: -215vw;
+        top: -22.5vw;
     }
 }
 
@@ -158,8 +144,8 @@ q {
     padding: 20px;  /*  This adds padding around the video-text container so that the background goes slightly beyound the text  */
     color: white;  /*  Makes the font color white  */
     position: relative;  /*  This sets the text relative to its normal positioning, allowing us to use the animation below  */
-    -webkit-animation: moveVideoText 5.75s;  /*  Animation for Safari 4.0 - 8.0  */
-    animation: moveVideoText 5.75s;  /*  Applies the moveNavText animation for 5.75s  */
+    -webkit-animation: moveVideoText 3s;  /*  Animation for Safari 4.0 - 8.0  */
+    animation: moveVideoText 3s;  /*  Applies the moveNavText animation for 5.75s  */
 }
 
 /*  This animation effect causes the overlay video text to move up from the top of the page upon page load  */
@@ -179,15 +165,7 @@ q {
     position: fixed;  /* This keeps the navbar at the top of the screen as we scroll */
     top: 0;  /* This ensures no space is displayed above the navbar */
     width: 100%;  /* This makes the navbar span the entire width of the page */
-    z-index: 2;  /* This ensures other elements don't display over the navbar */
-    -webkit-animation: moveNav 5s;  /* This applies the moveNav animation below for Safari 4.0 - 8.0 */
-    animation: moveNav 5s;  /* This applies the moveNav animation for all other browsers */ 
-}
-
-/* moveNav animation effect for moving the nav bar in from the left of the screen */
-@keyframes moveNav {
-    from {left: -100vw;}  /* The navbar is starting off screen to the left */
-    to {left: 0vw;}  /* This moves the navbar into place on the screen */
+    z-index: 2;  /* This ensures other elements don't display over the navbar */ 
 }
 
 /* Navbar links */
@@ -201,15 +179,6 @@ q {
     font-family: 'Helvetica', sans-serif;  /* This specifies the font family for the text on our navbar */
     font-size: 20px; /* This specifies the font size for text on our navbar */
     text-align: center;  /* This centers the text within its container on the navbar */
-    position: relative;  /* This sets the text relative to its normal positioning, allowing us to use the animation below */
-    -webkit-animation: moveNavText 5.75s;  /* Animation for Safari 4.0 - 8.0 */
-    animation: moveNavText 5.75s;  /* Applies the moveNavText animation for 5.75s for all other browsers */
-}
-
-/* moveNavText animation effect for moving the navbar text from above the view to the navbar */
-@keyframes moveNavText {
-    from {top: -100vw;}  /* This sets the navbar text 100% above the viewport */
-    to {top: 0vw}  /* This lowers the navbar text onto the navbar */
 }
 
 /* Screens 576px and smaller will display navbar links equally distributed */
@@ -217,6 +186,7 @@ q {
     .Navbar a {
         width: 25%;  /* This makes each link take up 1/4 of the navbar */
         font-size: 12px;  /* This lowers the font size for screen width lower than 576px */
+        margin-right: 0; /* This removes the margin-right so that it looks good on phone screens */
     }
 }
 
@@ -243,7 +213,7 @@ q {
 /**** CONTENT STYLING ****/
 /* This will style the main container of the content */
 .container-fluid {
-    background-color: #e7e7e7;
+    background-color: #f5f5f5;
     display: flex;
 }
 
@@ -288,8 +258,9 @@ h1::after {
 
 /**** Before footer and Footer Styling ****/
 /* Targets the HTML em tag */
-#beforefooter em {
+#beforefooter li em {
     color: #5c5c5c;  /* This sets the color of the text */
+    text-align: center;
 }
 
 /* Targets the icons in the container before the footer */
@@ -300,6 +271,7 @@ h1::after {
 
 #beforefooter li {
     display: inline-block;
+    padding: 0 50px;
 }
 
 /* This targets the icons in the footer */
@@ -320,6 +292,26 @@ h1::after {
     color: #8d0000;
 }
 
+/* Screens with 576px or less will display the beforefooter differently */
+@media screen and (max-width: 576px) {
+    #beforefooter li .fab {
+        font-size: 50px;
+        display: unset;
+        float: none;
+    }
+    #beforefooter li em {
+        color: #5c5c5c;
+    }
+    #beforefooter {
+        width: 60%;
+        margin-left: 18vw;
+    }
+    #beforefooter li {
+        margin-top: -30px;
+        margin-bottom: -30px;
+    }
+    
+}
 /* This targets the anchors in the footer */
 #footer a {
     text-decoration: none;
@@ -341,6 +333,7 @@ h1::after {
     position: relative;
     cursor: pointer;
     margin: 20px;
+    
 }
 
 /* Footer buttons hover effect */
@@ -403,12 +396,12 @@ h1::after {
     .sidebar {
         position: relative;
         width: 100%;
-        height: 25vw;
+        height: 20vw;
         padding: 1vw;
         text-align: center;
         margin-right: auto;
         margin-left: auto;
-        
+        top: 0;
     }
     .sidebar li {
         display: inline-block;
@@ -422,6 +415,25 @@ h1::after {
         width: 100%;
         margin-right: auto;
         margin-left: auto;
+        top: 0;
+    }
+}
+@media screen and (max-width: 676px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: 56vw;
+        padding: 5vw;
+        top: 0;
+    }
+    .sidebar li {
+        list-style: none;
+        text-decoration: none;
+        padding: 1vw;
+        float: left;
+        width: 100%;
+    }
+    .container-fluid #sidebarrow {
         top: 0;
     }
 }
