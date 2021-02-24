@@ -165,7 +165,7 @@ q {
     position: fixed;  /* This keeps the navbar at the top of the screen as we scroll */
     top: 0;  /* This ensures no space is displayed above the navbar */
     width: 100%;  /* This makes the navbar span the entire width of the page */
-    z-index: 2;  /* This ensures other elements don't display over the navbar */ 
+    z-index: 20;  /* This ensures other elements don't display over the navbar */ 
 }
 
 /* Navbar links */
