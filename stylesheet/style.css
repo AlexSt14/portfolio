@@ -409,6 +409,10 @@ h1::after {
     overflow: auto;
     font-weight: 700;
     display: block;
+    text-decoration: none;
+}
+#sidebar a {
+    text-decoration: none;
 }
 .sidebar li {
     list-style: none;
@@ -424,6 +428,7 @@ h1::after {
 }
 .sidebar li a {
     color: black;
+    text-decoration: none;
 }
 .sidebar li:hover .fab, a {
     transition: transform .5s;
