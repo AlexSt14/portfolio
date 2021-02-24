@@ -1,0 +1,5 @@
+I have always wondered what would the working environment of a Developer would be, over time my curiosity for Web and Software Developer grew more and more, I was always curious about how programs/games/websites were created, I was asking myself if this would be something that I could do for the rest of my career.
+                            <br>And that's when it happened, the spark I was missing ignited the instant I clicked play on my first HTML tutorial video.
+                            <br>Since then, I can't get enough. It incorporates creativity and problem solving and I'm allowed to break it to improve the code (in a separate Git branch of course) 
+                            <br>I have worked on a few personal projects that include HTML, CSS3 and JavaScript and I have done a few Websites, you can find out more by visiting my GitHub page or my About page.
+                            <br>I am also studying at <a href="https://www.learncodinganywhere.com/">The Tech Academy</a> , enthusiastically grabbing onto any other programming languages I can integrate into the coding web in my head.
