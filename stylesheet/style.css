@@ -52,22 +52,21 @@ q {
 
 /* Targets the first paragraph before the github image on the homepage */
 .firstp {
-    opacity: 1;
+visibility: visible;
 }
 /*Targets the second paragraph before the github image on the homepage */
 .ontop {
-    position: absolute;
-    top: 2120px;
-    opacity: 0;
+    visibility: hidden;
 }
 
 /* Targets the two paragraphs before the GitHub Image on the homepage */
 @media screen and (max-width: 500px) {
     .firstp {
-        opacity: 0;
+        visibility: hidden;
     }
     .ontop {
-        opacity: 1;
+        visibility: visible;
+        margin-top: -17vw;
     }
 }
 /* Image elements */
@@ -161,7 +160,7 @@ q {
 @media screen and (max-width: 576px) {
     #Coding_video {
         left: -231vw;
-        top: -25.5vw;
+        top: -30.5vw;
     }
 }
 
@@ -207,7 +206,6 @@ q {
     font-family: 'Helvetica', sans-serif;  /* This specifies the font family for the text on our navbar */
     font-size: 20px; /* This specifies the font size for text on our navbar */
     text-align: center;  /* This centers the text within its container on the navbar */
-    border-top-
 }
 
 /* Screens 576px and smaller will display navbar links equally distributed */
@@ -315,7 +313,7 @@ h1::after {
     color: #8d0000;
 }
 
-#footer .fab:hover {
+#footericons .fab:hover {
     transition: transform .3s;
     transform: scale(1.2);
     color: #8d0000;
@@ -341,7 +339,7 @@ h1::after {
     
 }
 /* This targets the anchors in the footer */
-#footer a {
+#footericons a {
     text-decoration: none;
     color: #1d1d22;
     list-style: none;
@@ -387,8 +385,13 @@ h1::after {
 
 /* Targets the footer buttons when screen size is 576px or less */
 @media screen and (max-width: 576px) {
+    #footer {
+        width: 100%;
+    }
     #footer li {
-        margin-left: 110px;
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 /**** END Before footer and Footer Styling ****/
