@@ -310,13 +310,13 @@ h1::after {
 #beforefooter .fab:hover {
     transition: transform .3s;
     transform: scale(1.2);
-    color: #8d0000;
+    color: #790303;
 }
 
 #footericons .fab:hover {
     transition: transform .3s;
     transform: scale(1.2);
-    color: #8d0000;
+    color: #790303;
 }
 
 /* Screens with 576px or less will display the beforefooter differently */
