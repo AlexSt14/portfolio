@@ -409,7 +409,6 @@ h1::after {
     overflow: auto;
     font-weight: 700;
     display: block;
-    text-decoration: none;
 }
 #sidebar a {
     text-decoration: none;
@@ -419,7 +418,6 @@ h1::after {
     text-decoration: none;
     cursor: pointer;
     color: rgba(0, 0, 0, 0.8);
-    background-color: rgb(221, 221, 221);
     padding: 0.5vw;
 }
 .sidebar li:hover {
@@ -441,9 +439,7 @@ h1::after {
         width: 100%;
         height: 20vw;
         padding: 1vw;
-        text-align: center;
-        margin-right: auto;
-        margin-left: auto;
+        float: left;
         top: 0;
     }
     .sidebar li {
@@ -451,14 +447,15 @@ h1::after {
         list-style: none;
         text-decoration: none;
         padding: 1vw;
-        text-align: center;
-        
+        color: #5c5c5c;
     }
     .container-fluid #sidebarrow {
         width: 100%;
-        margin-right: auto;
-        margin-left: auto;
+        float: left;
         top: 0;
+    }
+    .sidebar li .fab {
+        color: #f4f4f4;
     }
 }
 @media screen and (max-width: 676px) {
@@ -475,9 +472,13 @@ h1::after {
         padding: 1vw;
         float: left;
         width: 100%;
+        color: #5c5c5c;
     }
     .container-fluid #sidebarrow {
         top: 0;
+    }
+    .sidebar li .fab {
+        color: white;
     }
 }
 /**** END SIDEBAR STYLING ****/
