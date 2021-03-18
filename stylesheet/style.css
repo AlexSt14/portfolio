@@ -521,8 +521,8 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: rgb(189, 189, 189); /* Turns the background of the submit button white when the user hovers over it */
     color: black; /* Turns the font black when hovered over */
-    transform: scale(1.3); /* Makes the button increase 1.5 times in size */
-    transition: transform 1.1s; /* Makes the transform effect last 1.5 seconds */
+    transform: scale(1.3); /* Makes the button increase 1.3 times in size */
+    transition: transform .3s; /* Makes the transform effect last .3 seconds */
 }
 
 /* Form element */
@@ -532,4 +532,10 @@ form {
     padding: 1vw; /* Adds padding to the contact form */
     font-family: 'Lucida Console', sans-serif;
 }
+
+/* Targets the image on the contact page */
+.contactimg {
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
+}
+
 /**** END CONTACT STYLING ****/
