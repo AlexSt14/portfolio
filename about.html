@@ -10,10 +10,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./stylesheet/style.css">
     <link rel="stylesheet" href="./assets/all.css">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
 
     <title>Find out more about me!</title>
   </head>
@@ -44,12 +44,12 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-10 mx-auto">
+                <div class="col-md-12 mx-auto">
                     <img src="./images/Linkedin2.png" alt="Me" class="img-thumbnail img-fluid">
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-10 mx-auto">
+                <div class="col-md-12 mx-auto">
                     <p class="py-5">
                         So you're here to learn more about me. Excellent! I love talking about myself. How did I get into tech? I love learning new 
                         things. Naturally, tech was the perfect place to be. It's always changing and always moving forward. First, there was jQuery, then Angular, then React, and now we have Vue.Js. Holy moly! 
@@ -57,7 +57,7 @@
                         #StudentMindset
                     </p>
                 </div>
-                <div class="col-md-10 mx-auto">
+                <div class="col-md-6 mx-auto">
                     <p class="mb-5">
                         I have always wondered what would the working environment of a Developer be, over time my curiosity for Web and Software Development grew more and more, 
                         I was always curious about how programs/games/websites were created. I was asking myself if this would be something that I could do for the rest of my career.<br>
@@ -66,6 +66,9 @@
                         <br>I have worked on a few personal projects that include HTML, CSS and JavaScript and I have done a few Websites, you can find out more by visiting my <a href="https://github.com/AlexSt14" target="_blank">GitHub</a> page or read further down the page.
                         <br>I am also studying at <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a> , enthusiastically grabbing onto any other programming languages I can integrate into the coding web in my head.
                     </p>
+                </div>
+                <div class="col-md-6 mx-auto">
+                    <img src="./images/about images/Desk1.jpg" alt="" class="img-fluid mb-5 setupimg">
                 </div>
                 <div class="col-md-10 mx-auto mb-5">
                     <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -159,18 +162,34 @@
                         Below are just a few more pictures from the beautiful South-West of England!
                     </p>
                 </div>
-                <div class="col-md-6 py-4">
-                    <img src="./images/about images/photo3.jpg" alt="Beach view" class="img-fluid hover-shadow cursor" onclick="openModal();currentSlide(3)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                
+                <div id="slideshow">
+                    <div>
+                        <img src="./images/about images/Slide1.jpg" alt="" class="img-fluid cursor hover-shadow" onclick="openModal();currentSlide(7)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    </div>
+                    <div>
+                        <img src="./images/about images/Slide2.jpg" alt="" class="img-fluid cursor hover-shadow" onclick="openModal();currentSlide(8)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    </div>
+                    <div>
+                        <img src="./images/about images/Slide3.jpg" alt="" class="img-fluid cursor hover-shadow" onclick="openModal();currentSlide(9)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    </div>
+                    <div>
+                        <img src="./images/about images/Slide4.jpg" alt="" class="img-fluid cursor hover-shadow" onclick="openModal();currentSlide(10)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    </div>
+                    <div>
+                        <img src="./images/about images/photo3.jpg" alt="" class="img-fluid cursor hover-shadow" onclick="openModal();currentSlide(3)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    </div>
+                    <div>
+                        <img src="./images/about images/photo4.jpg" alt="" class="img-fluid cursor hover-shadow" onclick="openModal();currentSlide(4)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    </div>
+                    <div>
+                        <img src="./images/about images/photo6.jpg" alt="" class="img-fluid cursor hover-shadow" onclick="openModal();currentSlide(5)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    </div>
+                    <div>
+                        <img src="./images/about images/photo7.jpg" alt="" class="img-fluid cursor hover-shadow" onclick="openModal();currentSlide(6)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    </div>
                 </div>
-                <div class="col-md-6 py-4">
-                    <img src="./images/about images/photo4.jpg" alt="Beach view" class="img-fluid hover-shadow cursor" onclick="openModal();currentSlide(4)" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                </div>
-                <div class="col-md-6 py-5">
-                    <img src="./images/about images/photo6.jpg" alt="Beach view" class="img-fluid hover-shadow cursor" onclick="openModal();currentSlide(5)" data-bs-toggle="modal" data-bs-target="#exampleModal"> 
-                </div>
-                <div class="col-md-6 py-5">
-                    <img src="./images/about images/photo7.jpg" alt="Beach view" class="img-fluid hover-shadow cursor" onclick="openModal();currentSlide(6)" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                </div>
+
                 <div class="col-md-12 py5">
                     <p>
                         Another thing I am passionate about is actually building/assembling computers, the first ever assembled computer by me was when I 
@@ -181,14 +200,14 @@
                     </p>
                 </div>
                 <div class="col-md-4 py-5">
-                    <img src="./images/about images/pc1.jpg" alt="Motherboard" class="img-fluid hover-shadow cursor" onclick="openModal();currentSlide(7)">
+                    <img src="./images/about images/pc1.jpg" alt="Motherboard" class="img-fluid hover-shadow cursor" onclick="openModal();currentSlide(11)">
                 </div>
                 <div class="col-md-8 align-self-center py-5">
-                    <img src="./images/about images/pc2.jpg" alt="Assembling" class="img-fluid hover-shadow cursor" onclick="openModal();currentSlide(8)">
+                    <img src="./images/about images/pc2.jpg" alt="Assembling" class="img-fluid hover-shadow cursor" onclick="openModal();currentSlide(12)">
                 </div>
                 
                 <!-- Modal -->
-                <div id="myModal" class="modal animate__animated animate__zoomInDown">
+                <div id="myModal" class="modal fade animate__animated animate__jackInTheBox">
                     <button type="button" class="btn-close close cursor btn-close-white" onclick="closeModal()"></button>
 
                     <div class="modal-content">
@@ -199,42 +218,62 @@
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="mySlides">
-                                        <div class="numbertext">1 / 8</div>
+                                        <div class="numbertext">1 / 12</div>
                                         <img src="./images/about images/photo5.jpg" alt="Me watching the sea" class="img-fluid" style="width: 100%;">
                                     </div>
                             
                                     <div class="mySlides">
-                                        <div class="numbertext">2 / 8</div>
+                                        <div class="numbertext">2 / 12</div>
                                         <img src="./images/about images/photo2.jpg" alt="Me watching the sea" class="img-fluid" style="width: 100%;">
                                     </div>
                             
                                     <div class="mySlides">
-                                        <div class="numbertext">3 / 8</div>
+                                        <div class="numbertext">3 / 12</div>
                                         <img src="./images/about images/photo3.jpg" alt="Beach view" class="img-fluid" style="width: 100%;">
                                     </div>
                             
                                     <div class="mySlides">
-                                        <div class="numbertext">4 / 8</div>
+                                        <div class="numbertext">4 / 12</div>
                                         <img src="./images/about images/photo4.jpg" alt="Beach view" class="img-fluid" style="width: 100%;">
                                     </div>
                             
                                     <div class="mySlides">
-                                        <div class="numbertext">5 / 8</div>
+                                        <div class="numbertext">5 / 12</div>
                                         <img src="./images/about images/photo6.jpg" alt="Beach view" class="img-fluid" style="width: 100%;">
                                     </div>
                             
                                     <div class="mySlides">
-                                        <div class="numbertext">6 / 8</div>
+                                        <div class="numbertext">6 / 12</div>
                                         <img src="./images/about images/photo7.jpg" alt="Beach view" class="img-fluid" style="width: 100%;">
-                                    </div>
-                            
+                                    </div>                    
+
                                     <div class="mySlides">
-                                        <div class="numbertext">7 / 8</div>
+                                        <div class="numbertext">7 / 12</div>
+                                        <img src="./images/about images/Slide1.jpg" alt="Assembling" class="img-fluid" style="width: 100%;">
+                                    </div>
+
+                                    <div class="mySlides">
+                                        <div class="numbertext">8 / 12</div>
+                                        <img src="./images/about images/Slide2.jpg" alt="Assembling" class="img-fluid" style="width: 100%;">
+                                    </div>
+
+                                    <div class="mySlides">
+                                        <div class="numbertext">9 / 12</div>
+                                        <img src="./images/about images/Slide3.jpg" alt="Assembling" class="img-fluid" style="width: 100%;">
+                                    </div>
+
+                                    <div class="mySlides">
+                                        <div class="numbertext">10 / 12</div>
+                                        <img src="./images/about images/Slide4.jpg" alt="Assembling" class="img-fluid" style="width: 100%;">
+                                    </div>
+
+                                    <div class="mySlides">
+                                        <div class="numbertext">11 / 12</div>
                                         <img src="./images/about images/pc1.jpg" alt="Motherboard" class="img-fluid imgpc1center" height="400px">
                                     </div>
                             
                                     <div class="mySlides">
-                                        <div class="numbertext">8 / 8</div>
+                                        <div class="numbertext">12 / 12</div>
                                         <img src="./images/about images/pc2.jpg" alt="Assembling" class="img-fluid" style="width: 100%;">
                                     </div>
                             
@@ -246,28 +285,54 @@
                                 <!--Thumbnail-->
                                 
                                 <div class="column">
-                                    <img class="demo cursor img-fluid" src="./images/about images/photo5.jpg" onclick="currentSlide(1)" alt="Bora Bora Island" width="250" height="150">
+                                    <img class="demo cursor img-fluid" src="./images/about images/photo5.jpg" onclick="currentSlide(1)" alt="" width="250" height="150">
                                 </div>
                                 <div class="column columnmargin">
-                                    <img class="demo cursor img-fluid" src="./images/about images/photo2.jpg" onclick="currentSlide(2)" alt="New Zealand" width="250" height="150">
+                                    <img class="demo cursor img-fluid" src="./images/about images/photo2.jpg" onclick="currentSlide(2)" alt="" width="250" height="150">
                                 </div>
                                 <div class="column columnmargin">
-                                    <img class="demo cursor img-fluid" src="./images/about images/photo3.jpg" onclick="currentSlide(3)" alt="New Zealand" width="250" height="150">
+                                    <img class="demo cursor img-fluid" src="./images/about images/photo3.jpg" onclick="currentSlide(3)" alt="" width="250" height="150">
                                 </div>
                                 <div class="column columnmargin">
-                                    <img class="demo cursor img-fluid" src="./images/about images/photo4.jpg" onclick="currentSlide(4)" alt="Bora Bora Island" width="250" height="150">
+                                    <img class="demo cursor img-fluid" src="./images/about images/photo4.jpg" onclick="currentSlide(4)" alt="" width="250" height="150">
                                 </div>
                                 <div class="column columnmargin">
-                                    <img class="demo cursor img-fluid" src="./images/about images/photo6.jpg" onclick="currentSlide(5)" alt="Paris" width="250" height="150">
+                                    <img class="demo cursor img-fluid" src="./images/about images/photo6.jpg" onclick="currentSlide(5)" alt="" width="250" height="150">
                                 </div>
                                 <div class="column columnmargin">
-                                    <img class="demo cursor img-fluid" src="./images/about images/photo7.jpg" onclick="currentSlide(6)" alt="Paris" width="250" height="150">
+                                    <img class="demo cursor img-fluid" src="./images/about images/photo7.jpg" onclick="currentSlide(6)" alt="" width="250" height="150">
+                                </div>                                
+                                <div class="column columnmargin">
+                                    <img class="demo cursor img-fluid" src="./images/about images/Slide1.jpg" onclick="currentSlide(7)" alt="" width="250" height="150">
                                 </div>
                                 <div class="column columnmargin">
-                                    <img class="demo cursor img-fluid" src="./images/about images/pc1.jpg" onclick="currentSlide(7)" alt="Paris" width="150" height="50">
+                                    <img class="demo cursor img-fluid" src="./images/about images/Slide2.jpg" onclick="currentSlide(8)" alt="" width="250" height="150">
                                 </div>
                                 <div class="column columnmargin">
-                                    <img class="demo cursor img-fluid" src="./images/about images/pc2.jpg" onclick="currentSlide(8)" alt="Paris" width="250" height="150">
+                                    <img class="demo cursor img-fluid" src="./images/about images/Slide3.jpg" onclick="currentSlide(9)" alt="" width="250" height="150">
+                                </div>
+                                <div class="column">
+                                    <img class="demo cursor img-fluid" src="./images/about images/Slide4.jpg" onclick="currentSlide(10)" alt="" width="250" height="150">
+                                </div>
+                                <div class="column columnmargin">
+                                    <img class="demo cursor img-fluid pc1" src="./images/about images/pc1.jpg" onclick="currentSlide(11)" alt="Pc">
+                                </div>
+                                <div class="column columnmarginlast">
+                                    <img class="demo cursor img-fluid pc1" src="./images/about images/pc2.jpg" onclick="currentSlide(12)" alt="Pc">
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <span class="dots" onclick="currentSlide(1)"></span>
+                                    <span class="dots" onclick="currentSlide(2)"></span>
+                                    <span class="dots" onclick="currentSlide(3)"></span>
+                                    <span class="dots" onclick="currentSlide(4)"></span>
+                                    <span class="dots" onclick="currentSlide(5)"></span>
+                                    <span class="dots" onclick="currentSlide(6)"></span>
+                                    <span class="dots" onclick="currentSlide(7)"></span>
+                                    <span class="dots" onclick="currentSlide(8)"></span>
+                                    <span class="dots" onclick="currentSlide(9)"></span>
+                                    <span class="dots" onclick="currentSlide(10)"></span>
+                                    <span class="dots" onclick="currentSlide(11)"></span>
+                                    <span class="dots" onclick="currentSlide(12)"></span>
                                 </div>
                             </div>
 
@@ -337,21 +402,22 @@
                 </div>
                 <div class="col-md">
                     <ul id="footer">
-                        <a href="./contact.html"><li>
+                        <li><a href="./contact.html">
                             Contact
-                        </li></a>
-                        <a href="./about.html"><li>
+                        </a></li>
+                        <li><a href="./about.html">
                             About
-                        </li></a>
-                        <a href="#top"><li>
+                        </a></li>
+                        <li><a href="#top">
                             Back to top
-                        </li></a>
+                        </a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
+    
     <!-- FOOTER -->
 
 
@@ -365,6 +431,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     -->
+    
     <script src="./JS/script.js">
         var myModal = document.getElementById('myModal')
         var myInput = document.getElementById('myInput')
@@ -372,6 +439,7 @@
         myModal.addEventListener('shown.bs.modal', function () {
         myInput.focus()
         })
-</script>
+    </script>
+
   </body>
 </html>

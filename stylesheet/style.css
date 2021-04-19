@@ -1,7 +1,9 @@
 /****** GENERAL STYLING ******/
-/*  Body  */
+/*  Body and fade in effect */
 .body {
     margin: 0;
+    opacity: 1;
+    transition: 1s opacity;
 }
 
 /* Heading 1 elements */
@@ -37,7 +39,7 @@ p {
 
 /*  Anchor elements  */
 a {
-    color: blue;
+    color: rgb(0, 0, 179);
 }
 
 /* Quotation elements */
@@ -89,6 +91,11 @@ visibility: visible;
     position: relative;  /* This sets the image relative to its position, allowing us to use the animation below */
 }
 
+/* Targets the setup image in ABOUT Page */
+.setupimg {
+    border-radius: 3px;
+}
+
 /* Targets the GitHub image when screen is 576px or less */
 @media screen and (max-width: 576px) {
     #center  {
@@ -125,11 +132,11 @@ visibility: visible;
 
 /* Github Image hover effect */
 #center:hover {
-    transition: transform 2s;  /* Transition will last 2 seconds */
+    transition: transform 1.8s;  /* Transition will last 2 seconds */
     animation-iteration-count: 1;  /* This sets how many times will the animation play */
     transform: rotate(360deg);  /* The image will rotate 360 degrees */
-    -webkit-animation: gitMove 2s;  /* Animation for Safari 4.0 - 8.0 */
-    animation: gitMove 2s;  /* Animation for all other browsers, for 2 seconds */
+    -webkit-animation: gitMove 1.8s;  /* Animation for Safari 4.0 - 8.0 */
+    animation: gitMove 1.8s;  /* Animation for all other browsers, for 2 seconds */
     filter: grayscale(5%);
 }
 
@@ -140,7 +147,9 @@ visibility: visible;
     100% {right: 0vw;}  /* This is the end position of the animation */
 }
 
-
+#Bio {
+    background-color: #f8f8f8;
+}
 /**** END GENERAL STYLING  *****/
 
 
@@ -208,14 +217,7 @@ visibility: visible;
     text-align: center;  /* This centers the text within its container on the navbar */
 }
 
-/* Screens 576px and smaller will display navbar links equally distributed */
-@media screen and (max-width: 576px) {
-    .Navbar a {
-        width: 25%;  /* This makes each link take up 1/4 of the navbar */
-        font-size: 12px;  /* This lowers the font size for screen width lower than 576px */
-        margin-right: 0; /* This removes the margin-right so that it looks good on phone screens */
-    }
-}
+
 
 /* Navbar hover effects */
 .Navbar a:hover {
@@ -233,6 +235,17 @@ visibility: visible;
 .Navbar a.active {
     background-color: darkgrey;
 }
+
+/* Screens 576px and smaller will display navbar links equally distributed */
+@media screen and (max-width: 576px) {
+    .Navbar a {
+        width: 25%;  /* This makes each link take up 1/4 of the navbar */
+        font-size: 12px;  /* This lowers the font size for screen width lower than 576px */
+        margin-right: 0; /* This removes the margin-right so that it looks good on phone screens */
+        display: inline-block;
+    }
+}
+
 /****  END OF NAVBAR STYLING ****/
 
 
@@ -240,13 +253,8 @@ visibility: visible;
 /**** CONTENT STYLING ****/
 /* This will style the main container of the content */
 .container-fluid {
-    background-color: #f5f5f5;
+    background-color: #ffffff;
     display: flex;
-}
-
-/* This will style just the Short Bio container */
-#Bio {
-    border: 1px solid rgba(0,0,0,0.5);
 }
 
 /* This will be the underlines or abovelines */
@@ -373,7 +381,7 @@ h1::after {
 
 /* Footer background color */
 #footer {
-    background-color: #f4f4f4;
+    background-color: #ffffff;
 }
 
 /* Targets the paragraph element in the footer */
@@ -484,60 +492,128 @@ h1::after {
 /**** END SIDEBAR STYLING ****/
 
 /**** CONTACT STYLING ****/
-/* input[type=text] targets all text input sections of the contact form */
-input[type=text] {
-    width: 100%; /* Each input box covers the full width of the container */
-    padding: 0.35vw; /* Adds padding within the text box */
-    border: 1px solid #ccc; /* Setting a solid border and its color */
-    border-radius: 4px; /* Slightly rounds the corners of the text box border */
-    box-sizing: border-box; /* This creates a box with a border around the contact form input boxes */
-    margin-top: 6px; /* Adds a margin to the top of the text box */
-    margin-bottom: 16px; /* Adds a margin to the bottom of the text box */
-    resize: vertical; /* This allows the user to resize the text boxes vertically */
-    font-family: 'Courier New', sans-serif;
+
+/***** Styling the hidden form *****/
+/* Button used to open the contact form - fixed at the bottom of the page */
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.open-form {
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
 }
 
-/* Hover effect fo input boxes */
-input[type=text]:hover {
-    box-shadow: 0 0 5px rgba(29, 29, 29, 0.5) inset; /* This creates a blue shadow in the text box (inset=inside of box) when hovered over by the user */
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid rgb(250, 250, 250);
+    z-index: 9;
 }
 
-/* Submit button */
-input[type=submit] {
-    background-color: black; /* Sets the background clor fo the submit button to black */
-    color: white; /* Sets the font color of the submit button to white */
-    font-weight: bold; /* Makes the font of the submit button bold */
-    padding: 10px 20px; /* Adds padding to the submit button */
-    border: none; /* Removes the border from the submit button */
-    border-radius: 4px; /* Gives the submit button the same rounded corners as the text boxes */
-    cursor: pointer; /* changes the cursor to pointer when over the submit button */
-    display: block; /* Allows the submit button to be centered */
-    margin-left: auto; /* In combination with "margin-right: auto" this will center the submit button */
-    margin-right: auto;
-    font-family: 'Courier New', sans-serif;
+/* Add styles to the form container */
+.form-container {
+    max-width: 400px;
+    padding: 10px;
+    background-color: rgb(250, 250, 250);
 }
 
-/* Hover effect for submit button */
-input[type=submit]:hover {
-    background-color: rgb(189, 189, 189); /* Turns the background of the submit button white when the user hovers over it */
-    color: black; /* Turns the font black when hovered over */
-    transform: scale(1.3); /* Makes the button increase 1.3 times in size */
-    transition: transform .3s; /* Makes the transform effect last .3 seconds */
+.fa-file-signature {
+    padding-right: 15px;
+}
+/* Open form for mobile users */
+@media (max-width: 762px) {
+    .open-form {
+        padding: 12px 3px;
+        width: 100px;
+        bottom: 10px;
+        right: 10px;
+    }
+    .form-popup {
+        right: 0;
+        width: 100%;
+    }
+    .form-container {
+        max-width: 100%;
+    }
+    .open-form span {
+        display: none;
+    }
+    .fa-file-signature {
+        padding-right: 0;
+    }
 }
 
-/* Form element */
-form {
-    border-radius: 5px; /* Rounds the corners of the contact form */
-    background-color: #f2f2f2;
-    padding: 1vw; /* Adds padding to the contact form */
-    font-family: 'Lucida Console', sans-serif;
+/* Full-width input fields */
+.form-container input[type=text] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btnn {
+    background-color: #d6d6d6;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+.form-container .send:hover {
+    background-color: #afafaf;
+}
+
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: rgb(24, 24, 31);
+    color: white;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btnn:hover, .open-form:hover {
+    opacity: 1;
 }
 
 /* Targets the image on the contact page */
 .contactimg {
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
+    animation: zoominoutsinglefeatured 20s forwards;
 }
-
+@keyframes zoominoutsinglefeatured {
+    0% {
+        transform: scale(1,1);
+    }
+    50% {
+        transform: scale(1.2,1.2);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+.wrapperr {
+    overflow: hidden;
+}
 /**** END CONTACT STYLING ****/
 
 /**** MODAL STYLING ABOUT PAGE ****/
@@ -554,6 +630,10 @@ form {
 /* Targets the thumbnail images appart the first thumbnail image! */
 .columnmargin {
     margin-left: -24px;
+}
+/* Targets the last thumbnail image to move it close to the second last */
+.columnmarginlast {
+    margin-left: -91px;
 }
 
 /* The Modal (background) */
@@ -574,7 +654,7 @@ form {
 .modal-content,
 .modal-content .container-fluid {
     position: relative;
-    background-color: #030303;
+    background-color: #000000;
     margin: auto;
     padding: 0;
     width: 90%;
@@ -664,10 +744,44 @@ img.hover-shadow {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* When screen is 762px or smaller, the close button is smaller */
+.dots {
+    background-color: #afafaf;
+    height: 1em;
+    width: 1em;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+    z-index: 5;
+    margin-top: 30px;
+    margin-right: 10px;
+    display: none;
+}
+
+.activedot,
+.dots:hover {
+    background-color: rgb(48, 48, 48);
+}
+
+/* When screen is 762px or smaller, the close button is smaller and numbertext position changes and thumbnail is eliminated */
 @media (max-width: 762px) {
     .btn-close {
         font-size: 15px;
+    }
+    .prev,
+    .next {
+        top: 55%;
+        font-size: 13px;
+        padding: 10px;
+    }
+    .numbertext {
+        top: 4px;
+    }
+    .demo {
+        display: none;
+    }
+    .dots {
+        display: inline-block;
     }
 }
 
@@ -717,5 +831,171 @@ img.hover-shadow {
     }
     .text-center .btn {
         padding: 4px 70px;
+    }
+}
+
+/* Targets the body for the fade in effect */
+body.fade-out {
+    opacity: 0;
+    transition: none;
+}
+/***** END CONTACT PAGE EMAIL CARD ****/
+
+/**** ABOUT PAGE SLIDESHOW ****/
+#slideshow {
+    margin: 50px auto;
+    position: relative;
+    width: 1140px;
+    height: 862px;
+    padding: 10px;
+}
+
+#slideshow > div {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+}
+/*** Image in Modal Gallery thumbnail SMALLER!! ***/
+.columnmargin .pc1,
+.columnmarginlast .pc1 {
+    height: 102px;
+}
+/*** Adjusting the slideshow for mobile and tablets ***/
+@media (max-width: 1200px) {
+    #slideshow {
+        height: 725px;
+    }
+}
+@media (max-width: 991px) {
+    #slideshow {
+        height: 545px;
+    }
+}
+@media (max-width: 768px) {
+    #slideshow {
+        height: 410px;
+    }
+}
+@media (max-width: 510px) {
+    #slideshow {
+        height: 350px;
+    }
+}
+
+/**** HOMEPAGE SLIDESHOW ****/
+.fade_homepage {
+    animation-name: fade;
+    animation-duration: 1s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+@keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+.dots_homepage {
+    height: 1em;
+    width: 1em;
+    background-color: rgb(141, 141, 141);
+    cursor: pointer;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+    z-index: 1;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#slideshow_background {
+    background-color: white;
+}
+.active_homepage,
+.dots_homepage:hover {
+    background-color: black;
+}
+
+.mySlide {
+    display: none;
+}
+
+.homepage_slideshow {
+    vertical-align: middle;
+    height: auto;
+    box-shadow: 0px 4px 15px 16px rgba(0, 0, 0, 0.3);
+    width: 102.5%;
+    border-radius: 0px 0px 7px 7px;
+}
+.csharp {
+    vertical-align: middle;
+    height: auto;
+    box-shadow: 0px 4px 15px 16px rgba(0, 0, 0, 0.3);
+    width: 108.5%;
+    border-radius: 0px 0px 7px 7px;
+}
+
+#slideshow_container {
+    width: 960px;
+    height: auto;
+    position: relative;
+    margin: auto;
+}
+
+.Previous_homepage, .Next_homepage {
+    cursor: pointer;
+    width: auto;
+    padding: 1vw;
+    font-size: 1.6em;
+    color: darkgray;
+    font-weight: bold;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6s ease;
+    position: absolute;
+    top: 50%;
+}
+.Next_homepage {
+    border-radius: 3px 0 0 3px;
+    right: -22px;
+}
+.Previous_homepage {
+    left: 0px;
+}
+
+.Previous_homepage:hover, .Next_homepage:hover {
+    background-color: black;
+    color: white;
+}
+
+.textoverimg {
+    color: white;
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: Perpetua, Rockwell Extra Bold;
+    font-size: 1.5vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px;
+}
+
+@media (max-width: 762px) {
+    .Previous_homepage, .Next_homepage {
+        padding: 10px;
+    }
+    .Next_homepage {
+        right: -5px;
+    }
+    .textoverimg {
+        font-size: 1em;
     }
 }

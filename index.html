@@ -6,14 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link rel="stylesheet" href="./stylesheet/style.css" type="text/css">
         <link rel="stylesheet" href="./assets/all.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <title>Daniel Alex Sthali</title>
     </head>
     <!-- Body -->
     <body>
+        <script> //A clean fade in effect for the homepage!
+            document.body.classList.add('fade-out');
+            window.addEventListener('DOMContentLoaded', () => {
+                document.body.classList.remove('fade-out');
+            });
+        </script>
+
         <a name="top"></a>
+
         <!-- Navbar -->
         <div class="Navbar">
             <a class="active" href="./index.html">&nbsp; <i class="fas fa-house-user"></i> &nbsp;</a>
@@ -74,8 +83,8 @@
                 </div>    
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="container" id="Bio">
+        <div class="container-fluid" id="Bio">
+            <div class="container">
                 <div class="row">
                     <div class="col-md-6 py-5">
                         <h3 class="text-center">Short Bio</h3>
@@ -84,7 +93,7 @@
                             <br>Since then I entered the Software and Web Development world to explore my passion for coding and creating.
                             <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="new">The Tech Academy</a>’s Software Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, C# and more. 
                     <br>
-                    <br>I am a full-stack developer and would love to work with you on your next project. Contact me by going to my <a href="./contact.html">Contact</a> page!
+                    <br>I am a full-stack developer and would love to work with you on your next project. If you wish to leave me a message, head over to my <a href="./contact.html">Contact</a> page!
                         </p>
                     </div>
                     <div class="col-md-6 py-5">
@@ -98,17 +107,52 @@
                 <div class="col-md align-self-center">
                     <h2 class="text-center">Github</h2>
                     <p class="firstp text-center">
-                        You can view my coding projects and find my source code on my GitHub profile by clicking on the image to the right
+                        You can view my coding projects and find my source code on my GitHub profile &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </p>
                     <p class="ontop text-center">
-                        You can view my coding projects and find my source code on my GitHub profile by clicking on the image below
+                        You can view my coding projects and find my source code on my GitHub profile &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </p>
                 </div>
                 <div class="col-md">
-                    <a href="https://github.com/AlexSt14" target="new"><img src="./images/github-1.png" alt="Github image" id="center" class="img-fluid"></a>
+                    <a href="https://github.com/AlexSt14" target="new"><img src="./images/github-1.png" alt="Github image" id="center" class="img-fluid" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Visit my GitHub page"></a>
                 </div>
             </div>
         </div>
+
+        <!-- Short homepage slideshow -->
+        <div class="container-fluid">
+            <div class="container py-5" id="slideshow_background">
+                <div class="row">
+                    <div class="col-md-12" id="slideshow_container">
+                        <div class="mySlide fade_homepage">
+                            <img src="./images/HTML_CSS_and_JavaScript.jpeg" class="homepage_slideshow" alt="">
+                            <div class="textoverimg">I am a full-stack software developer, <br> trained in:<br>HTML, CSS, JavaScript.</div>
+                        </div>
+                        <div class="mySlide fade_homepage">
+                            <img src="./images/C_Sharp_and_Dot_NET.png" class="csharp" alt="">
+                            <div class="textoverimg">C#, .NET Framework, ASP.NET.</div>
+                        </div>
+                        <div class="mySlide fade_homepage">
+                            <img src="./images/SQL_and_Database.jpg" class="homepage_slideshow" alt="">
+                            <div class="textoverimg">Back end development, databases and SQL.</div>
+                        </div>
+                        <div class="mySlide fade_homepage">
+                            <img src="./images/coding.jpg" alt="" class="homepage_slideshow">
+                            <div class="textoverimg"><a href="./contact.html">Contact</a> me now!</div>
+                        </div>
+                        <a class="Previous_homepage" onclick="plusSlidesHomepage(-1)">&#10094;</a>
+                        <a class="Next_homepage" onclick="plusSlidesHomepage(1)">&#10095;</a>
+                    </div>
+                    <div class="col-md-12 text-center" id="dots_containerhp">
+                        <span class="dots_homepage" onclick="currentSlideHomepage(1)"></span>
+                        <span class="dots_homepage" onclick="currentSlideHomepage(2)"></span>
+                        <span class="dots_homepage" onclick="currentSlideHomepage(3)"></span>
+                        <span class="dots_homepage" onclick="currentSlideHomepage(4)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="container-fluid bg-dark">
             <div class="container bg-dark">
                 <div class="row justify-content-center">
@@ -155,15 +199,15 @@
                     </div>
                     <div class="col-md">
                         <ul id="footer" class="mx-auto">
-                            <a href="./contact.html"><li>
+                            <li><a href="./contact.html">
                                 Contact
-                            </li></a>
-                            <a href="./about.html"><li>
+                            </a></li>
+                            <li><a href="./about.html">
                                 About
-                            </li></a>
-                            <a href="#top"><li>
+                            </a></li>
+                            <li><a href="#top">
                                 Back to top
-                            </li></a>
+                            </a></li>
                         </ul>
                     </div>
                 </div>
@@ -175,6 +219,12 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="./JS/slideshowhomepage.js"> //This activates all the tooltips on the page by query selecting all elements with data below
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
