@@ -177,7 +177,8 @@ visibility: visible;
 .wrapper {
     width: 100%;  /*  Ensures the vide-text container fills the width of the video  */
     background-color: rgba(0,0,0,0.5);  /*  This provides a semi-transparent background for the text to sit over  */
-    padding: 70px;  /*  This adds padding around the video-text container so that the background goes slightly beyound the text  */
+    padding: 5px;  /*  This adds padding around the video-text container so that the background goes slightly beyound the text  */
+    padding-top: 30px;
     color: white;  /*  Makes the font color white  */
     position: relative;  /*  This sets the text relative to its normal positioning, allowing us to use the animation below  */
     -webkit-animation: moveVideoText 3s;  /*  Animation for Safari 4.0 - 8.0  */
