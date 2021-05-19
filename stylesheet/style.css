@@ -177,11 +177,12 @@ visibility: visible;
 .wrapper {
     width: 100%;  /*  Ensures the vide-text container fills the width of the video  */
     background-color: rgba(0,0,0,0.5);  /*  This provides a semi-transparent background for the text to sit over  */
-    padding: 20px;  /*  This adds padding around the video-text container so that the background goes slightly beyound the text  */
+    padding: 70px;  /*  This adds padding around the video-text container so that the background goes slightly beyound the text  */
     color: white;  /*  Makes the font color white  */
     position: relative;  /*  This sets the text relative to its normal positioning, allowing us to use the animation below  */
     -webkit-animation: moveVideoText 3s;  /*  Animation for Safari 4.0 - 8.0  */
     animation: moveVideoText 3s;  /*  Applies the moveNavText animation for 5.75s  */
+    margin-top: -48px;
 }
 
 /*  This animation effect causes the overlay video text to move up from the top of the page upon page load  */
@@ -197,11 +198,13 @@ visibility: visible;
 /**** NAVBAR STYLING ****/
 .Navbar {
     overflow: hidden;  /* This ensures that any content that overflows beyond the boundary of our nav bar is not displayed */
-    background-color: black;  /* This colors the navbar black */
+    background-color: rgba(52, 58, 64, 0.7); /* This colors the navbar black */
     position: fixed;  /* This keeps the navbar at the top of the screen as we scroll */
     top: 0;  /* This ensures no space is displayed above the navbar */
     width: 100%;  /* This makes the navbar span the entire width of the page */
     z-index: 20;  /* This ensures other elements don't display over the navbar */ 
+    transition: 0.6s; /* Set the speed of the navbar padding change in javascript */
+    padding: 30px 10px;  /* Set the same padding of navbar as the one in javascript navbar animation */
 }
 
 /* Navbar links */
@@ -217,23 +220,27 @@ visibility: visible;
     text-align: center;  /* This centers the text within its container on the navbar */
 }
 
+.Navbar a::after {
+    background-color: #e7e7e7;
+    content: "";
+    width: 0;
+    height: 3px;
+    border-radius: 5px;
+    left: 0;
+    bottom: 0;
+    transition: width 0.35s ease 0s;
+    position: absolute;
+}
 
 
 /* Navbar hover effects */
-.Navbar a:hover {
-    background-color: #e7e7e7; /* Defines the background color that will display when you hover over the link */
-    color: black;  /* This defines the font color that will display when navbar a elements are hovered over */
-    font-weight: bold;  /* This makes the text on the navbar bold when hovered over */
+.Navbar a:hover::after {
+    width: 100%;
 }
 
 /* Navbar Home icon */
 .fas {
     font-size: 25px;  /* This enlarges the home Icon on the navbar */
-}
-
-/* Navbar Home button */
-.Navbar a.active {
-    background-color: darkgrey;
 }
 
 /* Screens 576px and smaller will display navbar links equally distributed */
@@ -584,7 +591,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 
-/* Add a red background color to the cancel button */
+/* Add a background color to the cancel button */
 .form-container .cancel {
     background-color: rgb(24, 24, 31);
     color: white;
@@ -885,6 +892,7 @@ body.fade-out {
 }
 
 /**** HOMEPAGE SLIDESHOW ****/
+
 .fade_homepage {
     animation-name: fade;
     animation-duration: 1s;
@@ -988,7 +996,7 @@ body.fade-out {
     border-radius: 0px 0px 7px 7px;
 }
 
-@media (max-width: 762px) {
+@media (max-width: 800px) {
     .Previous_homepage, .Next_homepage {
         padding: 10px;
     }
@@ -997,5 +1005,9 @@ body.fade-out {
     }
     .textoverimg {
         font-size: 1em;
+        width: 97.3%;
+    }
+    .csharp {
+        width: 102.3%;
     }
 }
