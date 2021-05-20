@@ -295,6 +295,7 @@ h1::after {
     box-shadow: 5px 2px 3px rgba(128, 128, 128, 0.6);
     border-radius: 5px;
 }
+
 /**** END OF CONTENT STYLING ****/
 
 
@@ -997,6 +998,33 @@ body.fade-out {
     border-radius: 0px 0px 7px 7px;
 }
 
+/*****    JAVASCRIPT SCROLLING EFFECTS HOMEPAGE SLIDESHOW *****/
+.js-scroll {
+    opacity: 0;
+    transition: opacity 1500ms;
+}
+
+.js-scroll.scrolled {
+    opacity: 1;
+}
+
+.scrolled.fade-in-bottom {
+    animation: fade-in-bottom 1s ease-in-out both;
+}
+
+@keyframes fade-in-bottom {
+    0% {
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/*****  Adjusting homepage slideshow for smaller screens *****/
 @media (max-width: 800px) {
     .Previous_homepage, .Next_homepage {
         padding: 10px;
@@ -1010,5 +1038,20 @@ body.fade-out {
     }
     .csharp {
         width: 102.3%;
+    }
+    .scrolled.slide-left {
+        animation: slide-in-left 1s ease-in-out both;
+    }
+    @keyframes slide-in-left {
+        0% {
+            -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+            opacity: 1;
+        }
     }
 }
